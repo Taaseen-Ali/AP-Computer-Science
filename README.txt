@@ -1,1 +1,1 @@
-A collection of homework assignments from APCS with Brownmykolyk @ Stuyvesant Highschool
+A collection of homework assignments from APCS with Brownmykolyk @ Stuyvesant Highschool.
