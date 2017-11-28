@@ -16,6 +16,7 @@ coordinates to two elements in the two dimension array.
 Improvements for v2:
 -improved user prompts
 -improved layout of 2 dimension
+-allowed for differentiation of swapped elements and unswapped elements
 
  ****************************************************/
 
