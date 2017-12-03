@@ -1,3 +1,8 @@
+// Taaseen Ali
+// APCS1 pd1
+// HW45 -- In America, the Driver Sits on the Left
+// 2017-12-4m
+
 /***************************
  * class SuperArray version 2.0
  * (SKELETON)
@@ -53,6 +58,9 @@ public class SuperArray implements List
     //accessor -- return value at specified index
     public Object get( int index )
     {
+	if ( index >= _size || index < 0)
+	    throw new IndexOutOfBoundsException("Bad index");
+ 
 	return _data[index];
     }
 
@@ -61,6 +69,8 @@ public class SuperArray implements List
     //           return old value at index
     public Object set( int index, Object newVal )
     {
+	if ( index >= _size || index < 0)
+	    throw new IndexOutOfBoundsException("Bad index");
 	Object temp = _data[index];
 	_data[index] = newVal;
 	_size++;
@@ -71,6 +81,7 @@ public class SuperArray implements List
     //adds an item after the last item
     public boolean add( Object newVal )
     {
+	if(_size == _data.length) expand();
 	_data[_size] = newVal;
 	_size++;
 	return true;
@@ -81,6 +92,8 @@ public class SuperArray implements List
     public void add( int index, Object newVal )
     {
 	//first expand if necessary
+	if ( index >= _size || index < 0)
+	    throw new IndexOutOfBoundsException("Bad index");
 	if ( _size >= _data.length )
 	    expand();
 	for( int i = _size; i > index; i-- ) {
@@ -96,6 +109,9 @@ public class SuperArray implements List
     //shifts elements left to fill in newly-empted slot
     public Object remove( int index )
     {
+	if ( index >= _size || index < 0)
+	    throw new IndexOutOfBoundsException("Bad index");
+
 	Object temp = _data[index];
 	for( int i = index; i < _size - 1; i++ ) {
 	    _data[i] = _data[i+1];
@@ -123,7 +139,8 @@ public class SuperArray implements List
 	  System.out.println( curtis );
 
 	  for( int i = 0; i < curtis._data.length; i++ ) {
-	  curtis.set( i, i * 2 );
+	  System.out.println( "yayaya" );
+	  curtis.add( i * 2 );
 	  }
 
 	  System.out.println("Printing populated SuperArray curtis...");
@@ -137,11 +154,11 @@ public class SuperArray implements List
 	  + curtis._data.length );
 	  }
 
-	  SuperArray mayfield = new SuperArray();
-	  System.out.println("Printing empty SuperArray mayfield...");
+	  List mayfield = new SuperArray();
+	  System.out.println("Printing empty List mayfield...");
 	  System.out.println(mayfield);
 
-	  mayfield.add(5);
+	  mayfield.add(99);
 	  mayfield.add(4);
 	  mayfield.add(3);
 	  mayfield.add(2);
@@ -157,7 +174,7 @@ public class SuperArray implements List
 	  System.out.println("Printing SuperArray mayfield post-remove...");
 	  System.out.println(mayfield);
 
-	  mayfield.add(3,99);
+	  mayfield.add(99);
 	  System.out.println("Printing SuperArray mayfield post-insert...");
 	  System.out.println(mayfield);
 	  mayfield.add(2,88);
