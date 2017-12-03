@@ -11,7 +11,8 @@
  * comparison
  ******************************/
 
-// Taaseen Ali
+//Team Teddie Zali
+// Taaseen Ali, Eddie Zhu
 // APCS1 p1
 // HW44 -- implementing an interface, boolean short-circuiting
 // 2017-12-01f
