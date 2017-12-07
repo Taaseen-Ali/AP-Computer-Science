@@ -32,7 +32,7 @@ public class OrderedArrayList{
     }
 
     public String toString(){
-	return data.toString(           //use ArrayList implementation of toString
+	return data.toString();           //use ArrayList implementation of toString
     }
 
     public static void main(String args[]){
