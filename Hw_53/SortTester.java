@@ -1,0 +1,143 @@
+/***************************************
+ // Taaseen Ali
+ // APCS1 pd1
+ // HW53 -- Solid Comparative Analysis
+ // 2017-12-14
+  ***************************************/
+
+import java.util.ArrayList;
+public class SortTester{
+    public static void main(String args[]){
+
+/*****************************
+        Bubble Sort
+=============================
+Worst case scenerio:
+    Passing an array ar such that
+    the for every index n in ar,
+    ar.get(n).compareTo(n-1) returns 
+    positive.(The array is in 
+    descending order) Such an array 
+    will require n-pass swaps per
+    pass.
+
+Best case scenerio:
+    Passing an array ar such that
+    the for every index n in ar,
+    ar.get(n).compareTo(n-1) returns 
+    negative or zero.(The array is in 
+    ascending order) Such an array
+    will require 0 swaps.
+ *****************************/
+	ArrayList<Comparable> bestCaseBub = new ArrayList<Comparable>();
+	bestCaseBub.add(1);
+	bestCaseBub.add(2);
+	bestCaseBub.add(3);
+	bestCaseBub.add(4);
+	bestCaseBub.add(5);
+	System.out.println("Best case bubble sort:");
+	System.out.println(bestCaseBub);
+	System.out.println("============================");
+
+	ArrayList<Comparable> worstCaseBub = new ArrayList<Comparable>();
+	worstCaseBub.add(5);
+	worstCaseBub.add(4);
+	worstCaseBub.add(3);
+	worstCaseBub.add(2);
+	worstCaseBub.add(1);
+
+	System.out.println("Worst case bubble sort:" );
+	System.out.println(worstCaseBub);
+	System.out.println("============================");
+	
+	MySorts.bubbleSort(bestCaseBub);
+	MySorts.bubbleSort(worstCaseBub);
+	
+/*****************************
+       Selection Sort
+==============================
+Worst case scenerio:
+   No worst case as n swaps
+   always take place and 
+   (n^2)/2 total iterations
+   always occur
+
+Best case scenerio:
+   No best case as n swaps
+   always take place and 
+   (n^2)/2 total iterations
+   always occur
+
+ *****************************/
+	ArrayList<Comparable> bestCaseSel = new ArrayList<Comparable>();
+	bestCaseSel.add(1);
+	bestCaseSel.add(2);
+	bestCaseSel.add(3);
+	bestCaseSel.add(4);
+	bestCaseSel.add(5);
+
+	System.out.println("Best case selection sort:");
+	System.out.println(bestCaseSel);
+	System.out.println("============================");
+
+	ArrayList<Comparable> worstCaseSel = new ArrayList<Comparable>();
+	worstCaseSel.add(5);
+	worstCaseSel.add(4);
+	worstCaseSel.add(3);
+	worstCaseSel.add(2);
+	worstCaseSel.add(1);
+	
+	System.out.println("Worst case selection sort:");
+	System.out.println(worstCaseSel);
+	System.out.println("============================");
+
+	MySorts.selectionSort(bestCaseSel);
+	MySorts.selectionSort(worstCaseSel);
+	
+/*****************************
+       Insertion Sort
+==============================
+Worst case scenerio:
+    Passing an array ar such that
+    the for every index n in ar,
+    ar.get(n).compareTo(n-1) returns 
+    positive.(The array is in 
+    descending order) This will
+    necessitate pass number of swaps
+    pass (n-1 passes total) for a
+    total of (n^2)/2 swaps.
+
+Best case scenerio:
+    Passing an array ar such that
+    the for every index n in ar,
+    ar.get(n).compareTo(n-1) returns 
+    negative or zero.(The array is in 
+    ascending order) This will
+    necessitate 0 swaps.
+ *****************************/
+	ArrayList<Comparable> bestCaseIns = new ArrayList<Comparable>();
+	bestCaseIns.add(1);
+	bestCaseIns.add(2);
+	bestCaseIns.add(3);
+	bestCaseIns.add(4);
+	bestCaseIns.add(5);
+
+	System.out.println("Best case insertion sort:");
+	System.out.println(bestCaseIns);
+	System.out.println("============================");
+
+	ArrayList<Comparable> worstCaseIns = new ArrayList<Comparable>();
+	worstCaseIns.add(5);
+	worstCaseIns.add(4);
+	worstCaseIns.add(3);
+	worstCaseIns.add(2);
+	worstCaseIns.add(1);
+	
+	System.out.println("Best case insertion sort:");
+	System.out.println(worstCaseIns);
+	System.out.println("============================");
+
+	MySorts.insertionSort(bestCaseIns);
+	MySorts.insertionSort(worstCaseIns);
+    }
+}
